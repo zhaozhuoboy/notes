@@ -1,3 +1,4 @@
+const path = require('path')
 const sidebarVue = require('./sidebar/vue.sidebar')
 const sidebarReact = require('./sidebar/react.sidebar')
 const sidebarWxlite = require('./sidebar/wxlite.sidebar')
@@ -12,7 +13,7 @@ module.exports = {
   ],
   port: 9989,
   themeConfig: { // 主题配置
-    lastUpdated: '最后更新',
+    lastUpdated: '上次更新',
     logo: '/assets/logo.png',
     nav: [
       { text: '首页', link: '/' },
@@ -29,6 +30,10 @@ module.exports = {
       {
         text: 'Linux',
         link: '/docs/linux/01'
+      },
+      {
+        text: '全部文章',
+        link: '/posts/'
       },
       { text: 'Github', link: 'https://github.com/zhaozhuoboy', target:'_blank' }
     ],

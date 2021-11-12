@@ -12,6 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vuepress/plugin-register-components": "^1.8.2",
     "vuepress": "^1.5.2"
+  },
+  "dependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/theme-default": "^1.8.2"
   }
 }
