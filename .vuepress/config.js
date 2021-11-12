@@ -1,3 +1,9 @@
+const sidebarVue = require('./sidebar/vue.sidebar')
+const sidebarReact = require('./sidebar/react.sidebar')
+const sidebarWxlite = require('./sidebar/wxlite.sidebar')
+const sidebarDevSkill = require('./sidebar/devskill.sidebar')
+const sidebarLinux = require('./sidebar/linux.sidebar')
+
 module.exports = {
   title: 'Dev Notes',
   description: '前端 | HTML5 CSS3 | Vue React | 开发技巧 真机调试 Nodejs',
@@ -6,6 +12,7 @@ module.exports = {
   ],
   port: 9989,
   themeConfig: { // 主题配置
+    lastUpdated: '最后更新',
     logo: '/assets/logo.png',
     nav: [
       { text: '首页', link: '/' },
@@ -19,35 +26,23 @@ module.exports = {
         ]
       },
       { text: '开发', link: '/docs/dev-skills/' },
+      {
+        text: 'Linux',
+        link: '/docs/linux/01'
+      },
       { text: 'Github', link: 'https://github.com/zhaozhuoboy', target:'_blank' }
     ],
     sidebar: {
-      '/docs/fe/': [
-        {
-          title: '前端',
-          collapsable: false, // 是否可折叠
-          children: [
-            'vue/',
-            'react/',
-            'wxlite/'
-          ]
-        }
-      ],
-      '/docs/dev-skills/': [
-        {
-          title: '开发技巧',
-          collapsable: false,
-          children: [
-            'chrome'
-          ]
-        }
-      ]
+      '/docs/fe/vue/': sidebarVue,
+      '/docs/fe/react/': sidebarReact,
+      '/docs/fe/wxlite/': sidebarWxlite,
+      '/docs/dev-skills/': sidebarDevSkill,
+      '/docs/linux/': sidebarLinux
     }
   },
   markdown: {
     lineNumbers: true
   },
-  lastUpdated: 'Last Updated',
   configureWebpack: {
     resolve: {
       alias: {
