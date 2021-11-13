@@ -29,7 +29,7 @@ module.exports = {
       { text: '开发', link: '/docs/dev-skills/' },
       {
         text: 'Linux',
-        link: '/docs/linux/01'
+        link: '/docs/linux/basis'
       },
       { text: 'Github', link: 'https://github.com/zhaozhuoboy', target:'_blank' }
     ],
@@ -47,6 +47,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
+        '@src': path.resolve(__dirname, '../src/'),
         '@image': '/assets'
       }
     }
