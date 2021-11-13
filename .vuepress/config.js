@@ -31,10 +31,6 @@ module.exports = {
         text: 'Linux',
         link: '/docs/linux/01'
       },
-      {
-        text: '全部文章',
-        link: '/posts/'
-      },
       { text: 'Github', link: 'https://github.com/zhaozhuoboy', target:'_blank' }
     ],
     sidebar: {
