@@ -17,28 +17,28 @@ module.exports = {
     logo: '/assets/logo.png',
     nav: [
       { text: '首页', link: '/' },
-      { 
-        text: '大前端', 
-        link: '/docs/fe',
-        items: [
-          { text: 'Vue', link: '/docs/fe/vue/'},
-          { text: 'React', link: '/docs/fe/react/' },
-          { text: '小程序', link: '/docs/fe/wxlite/'}
-        ]
-      },
-      { text: '开发', link: '/docs/dev-skills/' },
+      // { 
+      //   text: '大前端', 
+      //   link: '/fe',
+      //   items: [
+      //     { text: 'Vue', link: '/fe/vue/'},
+      //     { text: 'React', link: '/fe/react/' },
+      //     { text: '小程序', link: '/fe/wxlite/'}
+      //   ]
+      // },
+      // { text: '开发', link: '/dev-skills/' },
       {
         text: 'Linux',
-        link: '/docs/linux/basis'
+        link: '/linux/basis'
       },
       { text: 'Github', link: 'https://github.com/zhaozhuoboy', target:'_blank' }
     ],
     sidebar: {
-      '/docs/fe/vue/': sidebarVue,
-      '/docs/fe/react/': sidebarReact,
-      '/docs/fe/wxlite/': sidebarWxlite,
-      '/docs/dev-skills/': sidebarDevSkill,
-      '/docs/linux/': sidebarLinux
+      '/fe/vue/': sidebarVue,
+      '/fe/react/': sidebarReact,
+      '/fe/wxlite/': sidebarWxlite,
+      '/dev-skills/': sidebarDevSkill,
+      '/linux/': sidebarLinux
     }
   },
   markdown: {
