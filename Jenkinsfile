@@ -1,24 +1,10 @@
 pipeline {
-       agent any
-  
-       stages {
-           stage('build') {
-               steps {
-                   sh 'npm install'
-                   sh 'npm run build'
-               }
-           }
- 
-          stage('deploy-test'){
-              steps {
-                  echo '部署文件到服务器'
-              }
-          }
- 
-          stage('notice'){
-              steps {
-                  echo '创建成功通知'
-              }
-          }
-      }
-  }
+    agent { docker 'node:6.3' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'npm --version'
+            }
+        }
+    }
+}
