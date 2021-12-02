@@ -26,13 +26,11 @@ export default {
   computed: {
   },
   created () {
-    console.log(this)
     this.findArticles()
   },
   methods: {
     findArticles () {
       const pages = this.$site.pages
-      console.log(pages)
       this.list = pages.map(item => {
         const info = {
           uuid: item.key,
