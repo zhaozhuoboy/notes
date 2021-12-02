@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .article-item {
   box-sizing: border-box;
   width: 100%;
