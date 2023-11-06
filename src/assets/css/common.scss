@@ -1,0 +1,100 @@
+// 公共动画
+%transition {
+  transition: all 0.3s ease;
+}
+
+// 单行文字超出部分显示省略号
+%row {
+  overflow:hidden;
+  word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  强制换行  */
+%wrap {
+  word-wrap: break-word;
+  word-break: normal;
+}
+
+/*  强制不换行  */
+%no-wrap {
+  white-space: nowrap;
+}
+
+%flex-row {
+  display: flex;
+}
+
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+ * 多行文字超出部分显示省略号
+ * autoprefixer 为 webpack 兼容方案，防止过时属性被删除
+ */
+@mixin row ($line) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+// 基础字号封装，字重默认为 400
+@mixin font ($size, $weight: 400) {
+  font-size: $size + px; font-weight: $weight;
+}
+
+// line-height 等于字号
+@mixin lineFont ($size, $weight: 400) {
+  line-height: 1;
+  @include font($size, $weight)
+}
+
+// 0.5px
+@mixin halfpixel ($borderHeight) {
+  transform: scaleY(calc($borderHeight / 2))
+}
+
+// 布局类型：PC
+@mixin web {
+  [app-layout-type="pc"] {
+    @content;
+  }
+}
+
+// 布局类型：PC，应用到样式内
+@mixin webInner {
+  [app-layout-type="pc"] & {
+    @content;
+  }
+}
+
+// 布局类型：移动端
+@mixin mobile {
+  [app-layout-type="mobile"] {
+    @content;
+  }
+}
+
+// 布局类型：移动端
+@mixin mobileInner {
+  [app-layout-type="mobile"] & {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    @content;
+  }
+}
